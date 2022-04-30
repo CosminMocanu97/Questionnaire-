@@ -1,0 +1,190 @@
+// night mode
+$appBackground-night: #18191a;
+$questionBackground-night: #2b2d2e;
+$textColor-night: #f7f7f7dc;
+$inputBackground-night: #ffffffe1;
+$themeButton-night: #f2f2f2;
+// light mode
+$appBackground-day: #f2f2f2;
+$questionBackground-day: white;
+$textColor-day: #667183;
+$inputBackground-day: #80959e2c;
+$themeButton-day: #18191a;
+
+$buttonBackground: #3066ff;
+$buttonBackground-disabled: #86a5fa;
+$buttonBackground-hover: #0041f3;
+
+.App {
+  background-color: $appBackground-night;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: $textColor-night;
+  flex-direction: column;
+  height: 100vh;
+
+  button {
+    background-color: $buttonBackground;
+    border: none;
+    border-radius: 10px;
+    color: $textColor-night;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+
+  button:hover {
+    background-color: $buttonBackground-hover;
+  }
+
+  button:disabled {
+    background-color: $buttonBackground-disabled;
+  }
+
+  .questionContainer {
+    background-color: $questionBackground-night;
+    border-radius: 10px;
+    width: 450px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    p {
+      margin: 0;
+    }
+
+    @media screen and (max-width: 500px) {
+      width: 90%;
+    }
+  }
+
+  .inputContainer {
+    width: 100%;
+    text-align: center;
+    input {
+      background-color: $inputBackground-night;
+      margin: 15px;
+      border: none;
+      border-radius: 10px;
+      outline: none;
+      padding: 7px 15px;
+      width: 60%;
+      font-size: 16px;
+    }
+  }
+
+  .radioContainer {
+    width: 100%;
+    justify-content: center;
+    display: flex;
+    padding: 10px;
+
+    div {
+      margin: 10px;
+
+      input[type="radio"] {
+        transform: scale(1.4);
+        cursor: pointer;
+        //   accent-color: red;
+      }
+    }
+
+    @media screen and (max-width: 500px) {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  .checkboxContainer {
+    width: 100%;
+    justify-content: center;
+    display: flex;
+    padding: 10px;
+
+    div {
+      margin: 10px;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+
+      input[type="checkbox"] {
+        transform: scale(1.4);
+        cursor: pointer;
+      }
+    }
+
+    @media screen and (max-width: 500px) {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  .buttonsContainer {
+    width: 90%;
+    margin: 20px 0px;
+    button:first-child {
+      float: right;
+    }
+  }
+
+  .summary {
+    background-color: $questionBackground-night;
+    border-radius: 10px;
+    padding: 15px;
+    width: 450px;
+    text-align: center;
+
+    p,
+    h3 {
+      margin-top: 0;
+    }
+
+    span {
+      font-weight: bold;
+    }
+  }
+
+  .theme {
+    position: absolute;
+    top: 3%;
+    right: 5%;
+
+    button {
+      background-color: $themeButton-night;
+      color: black;
+      border: none;
+      border-radius: 10px;
+      font-weight: bold;
+      padding: 10px 15px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  }
+}
+
+.light {
+  background-color: $appBackground-day;
+  color: $textColor-day;
+
+  .questionContainer {
+    background-color: $questionBackground-day;
+  }
+
+  .inputContainer {
+    input {
+      background-color: $inputBackground-day;
+    }
+  }
+
+  .summary {
+    background-color: $questionBackground-day;
+  }
+
+  .theme {
+    button {
+      background-color: $themeButton-day;
+      color: white;
+    }
+  }
+}
